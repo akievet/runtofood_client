@@ -17,7 +17,7 @@ var RouteListView = Backbone.View.extend({
 		this.$el.empty();
 		var that = this;
 		this.collection.each(function(route){
-			var view = new RouteView({model: oute});
+			var view = new RouteView({model: route});
 			that.$el.append(view.render().$el);
 		});
 	}
