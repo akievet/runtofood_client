@@ -1,8 +1,17 @@
 <h1>Run to Food</h1>
-<form action="/" method="post">
-	<input type="text" name="city" value="City">
-	<input type="text" name="location" value="Starting Location">
-	<input type="text" name="food" value="Food">
-	<input type="text" name="distance" value="Run Distance">
-	<input type="submit" value="Search">
-</form>
+<select id="city">
+	<option value="">City</option>
+	<option value="10">New York City</option>
+	<option value="11">Copenhagen</option>
+	<option value="12">San Francisco</option>
+</select>
+Address: <input type="text" id="address">
+Food: <input type="text" id="food">
+Distance: <input type="text" id="distance">
+<input type="submit" value="Search">
+
+<ul id="routes"></ul>
+
+<script type="text/template" id="route-template">
+	<h2>This is the rendered template</h2>
+</script>

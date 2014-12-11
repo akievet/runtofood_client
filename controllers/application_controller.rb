@@ -6,13 +6,13 @@ class ApplicationController < Sinatra::Base
     erb :index
   end
 
-  post '/' do
-    city = params[:city]
-    location = params[:location]
-    food = params[:food]
-    distance = params[:distance]
-    binding.pry
-  end
+  # post '/' do
+  #   city = params[:city]
+  #   address = params[:address]
+  #   food = params[:food]
+  #   distance = params[:distance]
+  #   binding.pry
+  # end
 
   get '/console' do
     binding.pry
