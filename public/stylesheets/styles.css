@@ -1,0 +1,41 @@
+body{
+  background-image: url("/images/runner.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+section#search-bar{
+  padding-top: 25px;
+}
+
+.navigation{
+  padding-top: 15px;
+  border-radius: 4px;
+  background-color: white;
+  opacity: 0.8;
+}
+
+h5#logo{
+  line-height: 1;
+  padding-left: 10px;
+}
+
+section#search-results{
+}
+
+#searcher{
+  height: 50px;
+}
+
+.address-text{
+  line-height: 1;
+  display: inline;
+}
+
+.transit-info{
+  margin-top: 50px;
+}
+
+.transit-details{
+  display: none;
+}

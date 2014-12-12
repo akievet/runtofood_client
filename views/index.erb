@@ -1,17 +1,27 @@
-<h1>Run to Food</h1>
-<select id="city">
-	<option value="">City</option>
-	<option value="10">New York City</option>
-	<option value="11">Copenhagen</option>
-	<option value="12">San Francisco</option>
-</select>
-Address: <input type="text" id="address">
-Food: <input type="text" id="food">
-Distance: <input type="text" id="distance">
-<input type="submit" value="Search">
+<section id="search-bar">
+	<div class="container">
+		<div class="row navigation">
+			<div class="two columns">
+				<h5 id="logo">Run to Food</h5>
+			</div>
+			<div class="ten columns">
+				<select id="city">
+					<option value="">City</option>
+					<option value="10">New York City</option>
+					<option value="11">Copenhagen</option>
+					<option value="12">San Francisco</option>
+				</select>
+				<input type="text" id="address" placeholder="address">
+				<input type="text" id="food" placeholder="food">
+				<input type="text" id="distance" placeholder="distance">
+				<input type="submit" value="Search" id="searcher">
+			</div>
+		</div>
+	</div>
+</section>
 
-<ul id="routes"></ul>
-
-<script type="text/template" id="route-template">
-	<h2>This is the rendered template</h2>
-</script>
+<section id="search-results">
+	<div class="container">
+		<ul id="routes"></ul>
+	</div>
+</section>

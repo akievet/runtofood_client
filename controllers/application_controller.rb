@@ -5,15 +5,7 @@ class ApplicationController < Sinatra::Base
   get '/' do
     erb :index
   end
-
-  # post '/' do
-  #   city = params[:city]
-  #   address = params[:address]
-  #   food = params[:food]
-  #   distance = params[:distance]
-  #   binding.pry
-  # end
-
+  
   get '/console' do
     binding.pry
   end

@@ -3,6 +3,71 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Run To Food</title>
+
+	<!-- FONT
+	–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+	<link href='http://fonts.googleapis.com/css?family=Raleway:400,300,600' rel='stylesheet' type='text/css'>
+
+	<!-- CSS
+	–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+	<link rel="stylesheet" href="/stylesheets/normalize.css">
+	<link rel="stylesheet" href="/stylesheets/skeleton.css">
+	<link rel="stylesheet" href="/stylesheets/styles.css">
+
+	<!-- TEMPLATES
+	–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+	<script type="text/template" id="route-template">
+		<div id="search-results">
+
+		<%% _.each( route.businesses, function( business ){ %>
+			<div class="row">
+				<div class="four columns basic-info">
+
+					<h3> <a href="<%%= business.url %>"><%%= business.name %> </a><h3>
+					<h5>Rating: <%%= business.rating %></h5>
+					<h5>Address:</h5>
+					<%% _.each( business.address, function(addressLine){ %>
+						<h6 class="address-text"><%%= addressLine %></h6>
+					<%% }); %>
+
+					<div class="transit-info">
+						<%% if ( business.transit_directions ){ %>
+						<div class="transit">
+							<button class="transit-toggle">Public Transit Back</button>
+							<div class="transit-details">
+								<h6>Duration: <%%= business.transit_directions.legs.duration %></h6>
+									<ol>
+									<%% _.each(business.transit_directions.legs.steps, function( step ){%>
+										<li><%%= step.html_instructions %>
+										<%% if( step.transit_details ){ %>
+											Train: <%%= step.transit_details.short_name %> (<%%= step.transit_details.name %>)
+										<%% }; %></li>
+									<%% }); %>
+									</ol>
+							</div>
+						</div>
+
+						<%% }; %>
+					</div>
+
+				</div>
+
+				<div class="seven columns offset-by-one map">
+					<iframe
+					width="600"
+					height="450"
+					frameborder="0" style="border:0"
+					src="https://www.google.com/maps/embed/v1/directions?key=AIzaSyAqCqasx0y-3U51dTJ6wRJbR66scFNSUN4<%%= business.google_api_input %>&units=imperial">
+					</iframe>
+				</div>
+			</div>
+			<hr>
+		<%% }); %>
+		</div>
+	</script>
+
+	<!-- JAVASCRIPTS
+	–––––––––––––––––––––––––––––––––––––––––––––––––– -->
 	<script src='/javascripts/jquery.js'></script>
 	<script src='/javascripts/underscore.js'></script>
 	<script src='/javascripts/backbone.js'></script>
@@ -10,6 +75,7 @@
 	<script src='/javascripts/backbone_app/models.js'></script>
 	<script src='/javascripts/backbone_app/collections.js'></script>
 	<script src='/javascripts/main.js'></script>
+
 </head>
 <body>
 	<%= yield %>
