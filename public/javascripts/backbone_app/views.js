@@ -25,9 +25,12 @@ var RouteListView = Backbone.View.extend({
 	},
 	render: function(){
 		this.$el.empty();
-		$('body').css({
-			'background-image': 'none',
+		$('.landing').css({
+			'display': 'none',
 			});
+		$('#search-bar').css({
+			'display': 'inline',
+		});
 		var that = this;
 		this.collection.each(function(route){
 			var view = new RouteView({model: route});

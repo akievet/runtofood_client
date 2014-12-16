@@ -7,6 +7,12 @@ function getParams(){
 	}
 }
 
+function inputDefaults(){
+	$('#city').val(1);
+	$('#address').val('505 LaGuardia Pl, nyc');
+	$('#food').val('bagels');
+	$('#distance').val(5);
+}
 
 
 $(function(){
