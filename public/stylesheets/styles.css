@@ -1,29 +1,44 @@
 /* ------------------------ COLORS  ------------------------ */
 body {
-  background-color: #ffdd79;
+  background-color: #5BFFE6;
   font-family: "Lato", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   font-weight: 300;
+  color: #FFFFFF;
+  width: 100%; }
+
+.logo {
+  width: 250px; }
+  .logo h3 {
+    display: inline; }
+
+header {
+  width: 100%;
+  padding: 15px 20px 0;
+  display: inline-block; }
+
+input[type="email"],
+input[type="search"],
+input[type="text"],
+input[type="password"],
+textarea,
+select {
   color: #37414a; }
 
 a {
   color: inherit; }
 
 a:hover {
-  color: #e83328; }
+  color: #2EB29E; }
 
-.landing {
-  padding-top: 200px; }
+/* ------------------------ TYPOGRAPHY  ------------------------ */
+.bold {
+  font-weight: 900; }
 
-.landing img {
-  width: 50%;
-  margin: 0 auto; }
+.italic {
+  font-style: italic; }
 
-.logo {
-  text-align: center; }
-
-section#search-bar {
-  display: none;
-  padding-top: 25px; }
+.thin {
+  font-weight: 300; }
 
 .navigation {
   padding-top: 15px;
@@ -31,13 +46,15 @@ section#search-bar {
   background-color: white;
   opacity: 0.8; }
 
-h5#logo {
-  line-height: 1;
-  padding-left: 10px;
-  font-family: 'League-Spartan', sans-serif; }
-
 .searcher {
   height: 50px; }
+
+/* ------------------------ RESULTS  ------------------------ */
+section.route {
+  padding: 75px 0; }
+
+.summary p {
+  font-size: 1.5em; }
 
 .address-text {
   line-height: 1;

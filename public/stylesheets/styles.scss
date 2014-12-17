@@ -8,39 +8,60 @@ $complement: #FF74FF;
 $secondary: #CCAB34;
 $secondarydark: #B29837;
 
+
+$maintext: #FFFFFF;
+$secondarytext: #37414a;
+
 body{
-  background-color: #ffdd79;
+  background-color: $primary;
   font-family: $sans-serif;
   font-weight: 300;
-  color: #37414a;
+  color: $maintext;
+  width: 100%;
 }
 
+.logo{
+  width: 250px;
+  h3{
+    display: inline;
+  }
+}
 
+header{
+  width: 100%;
+  padding: 15px 20px 0;
+  display: inline-block;
+}
+
+input[type="email"],
+input[type="search"],
+input[type="text"],
+input[type="password"],
+textarea,
+select {
+  color: $secondarytext;
+}
 
 a{
   color: inherit;
 }
 
 a:hover{
-  color: #e83328;
+  color: $primarydark;
 }
 
-.landing{
-  padding-top: 200px;
-}
 
-.landing img{
-  width: 50%;
-  margin: 0 auto;
-}
 
-.logo{
-  text-align: center;
-}
+/* ------------------------ TYPOGRAPHY  ------------------------ */
 
-section#search-bar{
-  display: none;
-  padding-top: 25px;
+.bold{
+  font-weight: 900;
+}
+.italic{
+  font-style: italic;
+}
+.thin{
+  font-weight: 300;
 }
 
 .navigation{
@@ -50,17 +71,19 @@ section#search-bar{
   opacity: 0.8;
 }
 
-h5#logo{
-  line-height: 1;
-  padding-left: 10px;
-  font-family: 'League-Spartan', sans-serif;
-}
-
-section#search-results{
-}
-
 .searcher{
   height: 50px;
+}
+
+/* ------------------------ RESULTS  ------------------------ */
+
+
+section.route{
+  padding: 75px 0;
+}
+
+.summary p{
+  font-size: 1.5em;
 }
 
 .address-text{
