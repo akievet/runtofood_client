@@ -1,85 +1,52 @@
-/*@font-face {
-  font-family: 'Norwester';
-  src:  url('/fonts/norwester.eot');
-  src:  url('/fonts/norwester.eot?#iefix') format('embedded-opentype'),
-        url('/fonts/norwester.woff') format('woff2'),
-        url('/fonts/norwester.ttf') format('truetype'),
-        url('/fonts/norwester.svg') format('svg');
-}*/
-
-@font-face{
-  font-family: 'League-Spartan';
-  src:  url('/fonts/leaguespartan-bold.eot');
-  src:  url('/fonts/leaguespartan-bold.eot?#iefix') format('embedded-opentype'),
-        url('/fonts/leaguespartan-bold.woff2') format('woff2'),
-        url('/fonts/leaguespartan-bold.woff') format('woff'),
-        url('/fonts/leaguespartan-bold.ttf') format('truetype'),
-        url('/fonts/leaguespartan-bold.svg') format('svg');
-}
-
-body{
+/* ------------------------ COLORS  ------------------------ */
+body {
   background-color: #ffdd79;
-  font-family: 'League-Spartan', sans-serif;
-  color: #37414a;
-}
+  font-family: "Lato", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: 300;
+  color: #37414a; }
 
+a {
+  color: inherit; }
 
+a:hover {
+  color: #e83328; }
 
-a{
-  color: inherit;
-}
+.landing {
+  padding-top: 200px; }
 
-a:hover{
-  color: #e83328;
-}
-
-.landing{
-  padding-top: 200px;
-}
-
-.landing img{
+.landing img {
   width: 50%;
-  margin: 0 auto;
-}
+  margin: 0 auto; }
 
-.logo{
-  text-align: center;
-}
+.logo {
+  text-align: center; }
 
-section#search-bar{
+section#search-bar {
   display: none;
-  padding-top: 25px;
-}
+  padding-top: 25px; }
 
-.navigation{
+.navigation {
   padding-top: 15px;
   border-radius: 4px;
   background-color: white;
-  opacity: 0.8;
-}
+  opacity: 0.8; }
 
-h5#logo{
+h5#logo {
   line-height: 1;
   padding-left: 10px;
-  font-family: 'League-Spartan', sans-serif;
-}
+  font-family: 'League-Spartan', sans-serif; }
 
-section#search-results{
-}
+.searcher {
+  height: 50px; }
 
-.searcher{
-  height: 50px;
-}
-
-.address-text{
+.address-text {
   line-height: 1;
-  display: inline;
-}
+  display: inline; }
 
-.transit-info{
-  margin-top: 50px;
-}
+.transit-info {
+  margin-top: 50px; }
 
-.transit-details{
-  display: none;
-}
+.transit-details {
+  display: none; }
+
+/*# sourceMappingURL=styles.css.map */

@@ -1,0 +1,77 @@
+$sans-serif: 'Lato', "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+
+/* ------------------------ COLORS  ------------------------ */
+
+$primary: #5BFFE6;
+$primarydark: #2EB29E;
+$complement: #FF74FF;
+$secondary: #CCAB34;
+$secondarydark: #B29837;
+
+body{
+  background-color: #ffdd79;
+  font-family: $sans-serif;
+  font-weight: 300;
+  color: #37414a;
+}
+
+
+
+a{
+  color: inherit;
+}
+
+a:hover{
+  color: #e83328;
+}
+
+.landing{
+  padding-top: 200px;
+}
+
+.landing img{
+  width: 50%;
+  margin: 0 auto;
+}
+
+.logo{
+  text-align: center;
+}
+
+section#search-bar{
+  display: none;
+  padding-top: 25px;
+}
+
+.navigation{
+  padding-top: 15px;
+  border-radius: 4px;
+  background-color: white;
+  opacity: 0.8;
+}
+
+h5#logo{
+  line-height: 1;
+  padding-left: 10px;
+  font-family: 'League-Spartan', sans-serif;
+}
+
+section#search-results{
+}
+
+.searcher{
+  height: 50px;
+}
+
+.address-text{
+  line-height: 1;
+  display: inline;
+}
+
+.transit-info{
+  margin-top: 50px;
+}
+
+.transit-details{
+  display: none;
+}
