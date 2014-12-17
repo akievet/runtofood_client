@@ -1,7 +1,7 @@
 /* ------------------------ COLORS  ------------------------ */
 body {
   background-color: #5BFFE6;
-  font-family: "Lato", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-family: "europa", Verdana, sans-serif;
   font-weight: 300;
   color: #FFFFFF;
   width: 100%; }
@@ -32,12 +32,12 @@ a:hover {
 
 /* ------------------------ TYPOGRAPHY  ------------------------ */
 .bold {
-  font-weight: 900; }
+  font-weight: 700; }
 
 .italic {
   font-style: italic; }
 
-.thin {
+.light {
   font-weight: 300; }
 
 .navigation {

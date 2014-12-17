@@ -1,6 +1,9 @@
 console.log("... required backbone views")
 
 var RouteView = Backbone.View.extend({
+	initialize: function(){
+		this.model.toMapOptions();
+	},
 	tagName: 'div',
 	template: _.template($("#route-template").html()),
 	events: {
@@ -25,12 +28,6 @@ var RouteListView = Backbone.View.extend({
 	},
 	render: function(){
 		this.$el.empty();
-		$('.landing').css({
-			'display': 'none',
-			});
-		$('#search-bar').css({
-			'display': 'inline',
-		});
 		var that = this;
 		this.collection.each(function(route){
 			var view = new RouteView({model: route});
@@ -38,3 +35,5 @@ var RouteListView = Backbone.View.extend({
 		});
 	}
 })
+
+

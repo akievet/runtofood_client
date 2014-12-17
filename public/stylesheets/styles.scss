@@ -1,4 +1,4 @@
-$sans-serif: 'Lato', "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+$sans-serif: "europa", Verdana, sans-serif;
 
 /* ------------------------ COLORS  ------------------------ */
 
@@ -54,15 +54,11 @@ a:hover{
 
 /* ------------------------ TYPOGRAPHY  ------------------------ */
 
-.bold{
-  font-weight: 900;
-}
-.italic{
-  font-style: italic;
-}
-.thin{
-  font-weight: 300;
-}
+.bold{font-weight: 700;}
+.italic{font-style: italic;}
+.light{font-weight: 300;}
+
+
 
 .navigation{
   padding-top: 15px;

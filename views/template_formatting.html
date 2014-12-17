@@ -1,0 +1,43 @@
+
+<section class="route">
+	<div class="container">
+		<div class="row">
+			<div class="four columns basic-info">
+				<h3 class="bold"> <a href="<%%= route.url %>"><%%= route.name %> </a><h3>
+				<h5>Rating: <%%= route.rating %></h5>
+				<h5>Address:</h5>
+				<%% _.each( route.address, function(addressLine){ %>
+					<h6 class="address-text"><%%= addressLine %></h6>
+				<%% }); %>
+
+				<div class="transit-info">
+				<%% if ( route.transit_directions ){ %>
+					<div class="transit">
+						<button class="transit-toggle">Public Transit Back</button>
+						<div class="transit-details">
+							<h6>Duration: <%%= route.transit_directions.legs.duration %></h6>
+							<ol>
+								<%% _.each(route.transit_directions.legs.steps, function( step ){%>
+								<li>
+									<%%= step.html_instructions %>
+									<%% if( step.transit_details ){ %>
+									Train: <%%= step.transit_details.short_name %> (<%%= step.transit_details.name %>)
+									<%% }; %>
+								</li>
+								<%% }); %>
+							</ol>
+						</div>
+					</div>
+
+				<%% }; %>
+				</div>
+
+			</div>
+
+			<div class="seven columns offset-by-one map" id="map-<%%= index %>">
+						
+			</div>
+		</div>
+	</div>
+	<hr/>
+</section>
