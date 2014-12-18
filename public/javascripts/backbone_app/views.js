@@ -6,12 +6,23 @@ var directionsService = new google.maps.DirectionsService();
 
 var RouteView = Backbone.View.extend({
 	initialize: function(){
-		this.model.toMapOptions()
+		this.model.toMapOptions();
+		_.bindAll(this, 'beforeRender', 'render', 'afterRender');
+		var _this = this;
+		this.render = _.wrap(this.render, function(render){
+			_this.beforeRender();
+			render();
+			_this.afterRender();
+			return _this;
+		});
 	},
 	tagName: 'div',
 	template: _.template($("#route-template").html()),
 	events: {
 		"click" : "toggleRouteDetails"
+	},
+	beforeRender: function(){
+		console.log('beforeRender');
 	},
 	render: function(){
 		this.$el.html(this.template({
@@ -25,7 +36,7 @@ var RouteView = Backbone.View.extend({
 		var stylesArray = [{"featureType":"landscape","stylers":[{"saturation":-100},{"lightness":65},{"visibility":"on"}]},{"featureType":"poi","stylers":[{"saturation":-100},{"lightness":51},{"visibility":"simplified"}]},{"featureType":"road.highway","stylers":[{"saturation":-100},{"visibility":"simplified"}]},{"featureType":"road.arterial","stylers":[{"saturation":-100},{"lightness":30},{"visibility":"on"}]},{"featureType":"road.local","stylers":[{"saturation":-100},{"lightness":40},{"visibility":"on"}]},{"featureType":"transit","stylers":[{"saturation":-100},{"visibility":"simplified"}]},{"featureType":"administrative.province","stylers":[{"visibility":"off"}]},{"featureType":"water","elementType":"labels","stylers":[{"visibility":"on"},{"lightness":-25},{"saturation":-100}]},{"featureType":"water","elementType":"geometry","stylers":[{"hue":"#ffff00"},{"lightness":-25},{"saturation":-97}]}]
 
 		var mapViewOptions = {
-    	zoom: 18,
+    	zoom: this.model.get('zoom'),
     	center: mapOptions.origin,
     	styles: stylesArray
   	};
@@ -61,8 +72,14 @@ var RouteView = Backbone.View.extend({
 	      directionsDisplay.setDirections(response);
 	    }
 	  });
-
 		return this;
+	},
+	afterRender: function(){
+		console.log('afterRender');
+		var map = this.map;
+		google.maps.event.addListenerOnce(map, 'idle', function(){
+			google.maps.event.trigger(map, 'resize');
+		});
 	},
 	toggleRouteDetails: function(e){
 		$(e.target.nextElementSibling).slideToggle();
