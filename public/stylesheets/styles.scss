@@ -1,5 +1,7 @@
 $sans-serif: "europa", Verdana, sans-serif;
 
+$padding: 40px;
+
 /* ------------------------ COLORS  ------------------------ */
 
 $primary: #5BFFE6;
@@ -7,10 +9,12 @@ $primarydark: #2EB29E;
 $complement: #FF74FF;
 $secondary: #CCAB34;
 $secondarydark: #B29837;
+$mapgrey: #a6a6a0;
 
 
 $maintext: #FFFFFF;
 $secondarytext: #37414a;
+$graytext: #555;
 
 body{
   background-color: $primary;
@@ -21,16 +25,24 @@ body{
 }
 
 .logo{
+  position: absolute;
+  top: 10px;
+  left: 40px;
   width: 250px;
   h3{
     display: inline;
   }
 }
 
+
 header{
+  position: fixed;
+  z-index: 100;
+  top: 0;
   width: 100%;
-  padding: 15px 20px 0;
+  padding: 10px 0;
   display: inline-block;
+  background-color: $primary;
 }
 
 input[type="email"],
@@ -52,11 +64,14 @@ a:hover{
 
 
 
+
+
 /* ------------------------ TYPOGRAPHY  ------------------------ */
 
 .bold{font-weight: 700;}
 .italic{font-style: italic;}
 .light{font-weight: 300;}
+.display{color: $primarydark;}
 
 
 
@@ -67,16 +82,63 @@ a:hover{
   opacity: 0.8;
 }
 
-.searcher{
+#searcher{
   height: 50px;
 }
+
+.search-bar{
+  float: left;
+  position: relative;
+  left: 300px;
+  top: 6px;
+}
+
+
+/* ------------------------ HEADER  ------------------------ */
+#header{
+  text-align: center;
+  padding: $padding 0 10px;
+  margin-top: 86px;
+}
+
+
+.header-up{
+  top: -86px;
+  transform: translateY(-100%);
+
+}
+
+.header-down{
+  transform: translateY(0%);
+}
+
+input[type="submit"]{
+  color: #FFFFFF;
+  border: 2px solid $complement;
+  &:focus{
+    border: 2px solid $complement;
+    color: inherit;
+  }
+  &:hover{
+    border: 2px solid $primarydark;
+  };
+}
+
 
 /* ------------------------ RESULTS  ------------------------ */
 
 
-section.route{
-  padding: 75px 0;
+#search-results{
+  display: none; 
 }
+
+.route-results{
+  padding: $padding;
+  background-color: #FFFFFF;
+  color: $graytext;
+}
+
+
 
 .summary p{
   font-size: 1.5em;
@@ -100,4 +162,18 @@ section.route{
   width: 400px;
   margin: 0;
   padding: 0;
+}
+
+hr{
+  height: 1px;
+  background: $primary;
+  padding: 0 $padding;
+}
+
+a.rest-name{
+  text-decoration: none;
+  border-bottom: 2px solid $complement;
+  &:hover{
+    border-bottom: 2px solid $primarydark;
+  }
 }

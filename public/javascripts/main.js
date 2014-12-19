@@ -1,5 +1,5 @@
 function getParams(){
-	return{
+	return {
 		city: $('#city').val(),
 		address: $('#address').val(),
 		food: $('#food').val(),
@@ -14,6 +14,17 @@ function inputDefaults(){
 	$('#distance').val(5);
 }
 
+function renderHeader(count, address, distance, food){
+	var data = {
+		"count" : count,
+		"address" : address,
+		"distance" : distance,
+		"food" : food
+	};
+
+	var template = _.template($("#header-template").html());
+	$("#header").append(template(data));
+}
 
 
 
@@ -40,12 +51,56 @@ $(function(){
 			reset: true,
 			data: getParams()
 		}).done(function(data){
+			
+			var resultsCount = data.length;
+			var foodQuery = data[0].food;
+			var addressQuery = data[0].starting_address;
+			var milesQuery = data[0].distance;
+
+			renderHeader(resultsCount, addressQuery, milesQuery, foodQuery);
 			NProgress.done();
 			console.table(data);
 		})
 	});
 
+	// ---------------- THIS IS FOR TESTING ----------------
+
 	inputDefaults();
+
+	// ---------------- DISAPPEARING HEADER ----------------
+
+	var didScroll;
+	var lastScrollTop = 0;
+	var delta = 5;
+	var navbarHeight = $('header').outerHeight();
+
+
+	$(window).scroll(function(event){
+		didScroll = true;
+	});
+
+	setInterval(function(){
+		if (didScroll){
+			hasScrolled();
+			didScroll = false;
+		}
+	}, 250);
+
+	function hasScrolled(){
+		var st = $(this).scrollTop();
+		if(Math.abs(lastScrollTop - st) <= delta)
+			return;
+		if (st > lastScrollTop && st > navbarHeight){
+			$('header').removeClass('header-down').addClass('header-up');
+		}else{
+			if(st + $(window).height() < $(document).height()){
+				$('header').removeClass('header-up').addClass('header-down');
+			}
+		}
+
+		lastScrollTop = st;
+	}
+
 
 
 })

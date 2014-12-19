@@ -7,14 +7,21 @@ body {
   width: 100%; }
 
 .logo {
+  position: absolute;
+  top: 10px;
+  left: 40px;
   width: 250px; }
   .logo h3 {
     display: inline; }
 
 header {
+  position: fixed;
+  z-index: 100;
+  top: 0;
   width: 100%;
-  padding: 15px 20px 0;
-  display: inline-block; }
+  padding: 10px 0;
+  display: inline-block;
+  background-color: #5BFFE6; }
 
 input[type="email"],
 input[type="search"],
@@ -40,18 +47,54 @@ a:hover {
 .light {
   font-weight: 300; }
 
+.display {
+  color: #2EB29E; }
+
 .navigation {
   padding-top: 15px;
   border-radius: 4px;
   background-color: white;
   opacity: 0.8; }
 
-.searcher {
+#searcher {
   height: 50px; }
 
+.search-bar {
+  float: left;
+  position: relative;
+  left: 300px;
+  top: 6px; }
+
+/* ------------------------ HEADER  ------------------------ */
+#header {
+  text-align: center;
+  padding: 40px 0 10px;
+  margin-top: 86px; }
+
+.header-up {
+  top: -86px;
+  transform: translateY(-100%); }
+
+.header-down {
+  transform: translateY(0%); }
+
+input[type="submit"] {
+  color: #FFFFFF;
+  border: 2px solid #FF74FF; }
+  input[type="submit"]:focus {
+    border: 2px solid #FF74FF;
+    color: inherit; }
+  input[type="submit"]:hover {
+    border: 2px solid #2EB29E; }
+
 /* ------------------------ RESULTS  ------------------------ */
-section.route {
-  padding: 75px 0; }
+#search-results {
+  display: none; }
+
+.route-results {
+  padding: 40px;
+  background-color: #FFFFFF;
+  color: #555; }
 
 .summary p {
   font-size: 1.5em; }
@@ -71,5 +114,16 @@ section.route {
   width: 400px;
   margin: 0;
   padding: 0; }
+
+hr {
+  height: 1px;
+  background: #5BFFE6;
+  padding: 0 40px; }
+
+a.rest-name {
+  text-decoration: none;
+  border-bottom: 2px solid #FF74FF; }
+  a.rest-name:hover {
+    border-bottom: 2px solid #2EB29E; }
 
 /*# sourceMappingURL=styles.css.map */

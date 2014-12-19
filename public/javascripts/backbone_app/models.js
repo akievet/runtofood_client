@@ -5,7 +5,7 @@ var Route = Backbone.Model.extend({
 		var mapData;
 
 		var originLatlng = new google.maps.LatLng(this.get('origin_lat'), this.get('origin_long'));
-		var destinationLatLng = new google.maps.LatLng(this.get('dest_lat'), 'dest_long');
+		var destinationLatLng = new google.maps.LatLng(this.get('dest_lat'), this.get('dest_long'));
 
 		mapData = {
 			"origin": originLatlng,

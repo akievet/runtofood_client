@@ -19,50 +19,58 @@
 
 	<!-- TEMPLATES
 	–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+	<script type="text/template" id="header-template">
+		<div class="row">
+			<h5>We found <span class="bold"><%%= count %></span> results for your search:<br>
+			Starting point: <span class="bold"><%%= address %></span>  |  Distance: <span class="bold"><%%= distance %></span> miles  |  Food: <span class="bold"><%%= food %></span></h5>
+		</div>
+	</script>
+
+
 	<script type="text/template" id="route-template">
 			
-		<section class="route">
-			<div class="container">
-				<div class="row">
-					<div class="four columns basic-info">
-						<h3 class="bold"> <a href="<%%= route.url %>"><%%= route.name %> </a><h3>
-						<h5>Rating: <%%= route.rating %></h5>
-						<h5>Address:</h5>
-						<%% _.each( route.address, function(addressLine){ %>
-							<h6 class="address-text"><%%= addressLine %></h6>
-						<%% }); %>
+	<div class="row">
+	<div class="four columns basic-info">
+		<h3 class="bold display"> <a href="<%%= route.url %>" class="rest-name"><%%= route.name %> </a><h3>
+		<h5 class="map-distance">Distance: </h5>
+			<h5>Rating: <%%= route.rating %></h5>
+			<h5>Address:</h5>
+			<%% _.each( route.address, function(addressLine){ %>
+			<h6 class="address-text"><%%= addressLine %></h6>
+			<%% }); %>
 
-						<div class="transit-info">
-						<%% if ( route.transit_directions ){ %>
-							<div class="transit">
-								<button class="transit-toggle">Public Transit Back</button>
-								<div class="transit-details">
-									<h6>Duration: <%%= route.transit_directions.legs.duration %></h6>
-									<ol>
-										<%% _.each(route.transit_directions.legs.steps, function( step ){%>
-										<li>
-											<%%= step.html_instructions %>
-											<%% if( step.transit_details ){ %>
-											Train: <%%= step.transit_details.short_name %> (<%%= step.transit_details.name %>)
-											<%% }; %>
-										</li>
-										<%% }); %>
-									</ol>
-								</div>
-							</div>
-
-						<%% }; %>
-						</div>
-
+			<div class="transit-info">
+				<%% if ( route.transit_directions ){ %>
+				<div class="transit">
+					<button class="transit-toggle">Public Transit Back</button>
+					<div class="transit-details">
+						<h6>Duration: <%%= route.transit_directions.legs.duration %></h6>
+						<ol>
+							<%% _.each(route.transit_directions.legs.steps, function( step ){%>
+							<li>
+								<%%= step.html_instructions %>
+								<%% if( step.transit_details ){ %>
+								Train: <%%= step.transit_details.short_name %> (<%%= step.transit_details.name %>)
+								<%% }; %>
+							</li>
+							<%% }); %>
+						</ol>
 					</div>
-
-					<div class="seven columns offset-by-one map" id="map-<%%= route.response_id %>">
-					</div>
-					<div><h3 class="map-distance">Distance: </h3></div>
 				</div>
+
+				<%% }; %>
 			</div>
-			<hr/>
-		</section>
+
+		</div>
+
+		<div class="map-container">
+			<div class="seven columns offset-by-one map"></div>
+		</div>
+
+		
+	</div>
+	<hr/>
+
 
 	</script>
 
@@ -71,7 +79,7 @@
 	<script src='/javascripts/jquery.js'></script>
 	<script src='/javascripts/underscore.js'></script>
 	<script src='/javascripts/nprogress.js'></script>
-	<script src='https://maps.googleapis.com/maps/api/js?key=AIzaSyAcvtz7HRQcQgdiCT4-ZRN46P5B68L5LDk'></script>
+	<script src='https://maps.googleapis.com/maps/api/js?key=AIzaSyAiUC5T9D-52bOtfYGD8ZrD4rlFX0hjr8U'></script>
 	<script src='/javascripts/backbone.js'></script>
 	<script src='/javascripts/backbone_app/views.js'></script>
 	<script src='/javascripts/backbone_app/models.js'></script>
@@ -81,11 +89,12 @@
 
 </head>
 	<body>
-		<header>
+		<header class="header-down">
+			<div class="logo">
+				<h3><span class="bold italic">RUN</span><span class="light italic">TO</span><span class="italic bold">FOOD</span></h3>
+			</div>
 			<div class="search-bar">
-				<div class="logo">
-					<h3><span class="bold italic">RUN</span><span class="light italic">TO</span><span class="italic bold">FOOD</span></h3>
-				</div>
+				
 				<select id="city">
 						<option value="">City</option>
 						<option value="1">New York City</option>
@@ -100,7 +109,13 @@
 		</header>
 		
 		<section id="search-results">
-			<div id="routes"></div>
+			<div class="container">
+				<div id="header"></div>
+				<div class="route-results" id="routes"></div>
+				<div id="footer">
+					<p>Restaurant information on this application is served from the YELP API. Map and direction information on this application are served from the GOOGLE MAPS Api</p>
+				</div>
+			</div>
 		</section>
 	</body>
 </html>
