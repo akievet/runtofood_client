@@ -117,7 +117,7 @@ input[type="submit"]{
   border: 2px solid $complement;
   &:focus{
     border: 2px solid $complement;
-    color: inherit;
+    color: inherit; 
   }
   &:hover{
     border: 2px solid $primarydark;
