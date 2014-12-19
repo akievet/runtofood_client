@@ -37,6 +37,10 @@ a {
 a:hover {
   color: #2EB29E; }
 
+#main-illustration {
+  text-align: center;
+  margin-top: 200px; }
+
 /* ------------------------ TYPOGRAPHY  ------------------------ */
 .bold {
   font-weight: 700; }
@@ -80,9 +84,9 @@ a:hover {
 
 input[type="submit"] {
   color: #FFFFFF;
-  border: 2px solid #FF74FF; }
+  border: 2px solid #CCAB34; }
   input[type="submit"]:focus {
-    border: 2px solid #FF74FF;
+    border: 2px solid #CCAB34;
     color: inherit; }
   input[type="submit"]:hover {
     border: 2px solid #2EB29E; }
@@ -125,5 +129,46 @@ a.rest-name {
   border-bottom: 2px solid #FF74FF; }
   a.rest-name:hover {
     border-bottom: 2px solid #2EB29E; }
+
+/*
+==============================================
+slideRight
+==============================================
+*/
+.slideRight {
+  animation-name: slideRight;
+  -webkit-animation-name: slideRight;
+  animation-duration: 1s;
+  -webkit-animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+  -webkit-animation-timing-function: ease-in-out;
+  visibility: visible; }
+
+@keyframes slideRight {
+  0% {
+    transform: translateX(-150%); }
+  50% {
+    transform: translateX(8%); }
+  65% {
+    transform: translateX(-4%); }
+  80% {
+    transform: translateX(4%); }
+  95% {
+    transform: translateX(-2%); }
+  100% {
+    transform: translateX(0%); } }
+@-webkit-keyframes slideRight {
+  0% {
+    -webkit-transform: translateX(-150%); }
+  50% {
+    -webkit-transform: translateX(8%); }
+  65% {
+    -webkit-transform: translateX(-4%); }
+  80% {
+    -webkit-transform: translateX(4%); }
+  95% {
+    -webkit-transform: translateX(-2%); }
+  100% {
+    -webkit-transform: translateX(0%); } }
 
 /*# sourceMappingURL=styles.css.map */

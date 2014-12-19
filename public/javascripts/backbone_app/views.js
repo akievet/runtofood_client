@@ -126,6 +126,7 @@ var RouteListView = Backbone.View.extend({
 	},
 	render: function(){
 		$('#header').empty();
+		$('#main-illustration').css('display', 'none');
 		$('#search-results').css('display', 'inherit');
 		this.$el.empty();
 		var that = this;
